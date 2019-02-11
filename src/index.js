@@ -3,6 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {Router, Route, browserHistory} from "react-router";
+
+class Root extends React.Component {
+    render() {
+        return(
+            <Router history={browserHistory}>
+                <Route path={"user"} component={import('./components/ProductCategoryRow').ProductCategoryRow}></Route>
+            </Router>
+        );   
+    }
+}
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
